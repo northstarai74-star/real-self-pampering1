@@ -47,34 +47,34 @@ export function CertificateCheck() {
   };
 
   return (
-    <section id="verify" className="relative border-y border-border bg-white/60 py-20 md:py-28">
-      <div className="mx-auto grid max-w-[1400px] gap-12 px-5 md:px-10 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
+    <section id="verify" className="relative border-y border-border bg-white/60 py-16 sm:py-20 md:py-28">
+      <div className="mx-auto grid max-w-[1400px] gap-10 sm:gap-12 px-4 sm:px-5 md:px-10 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
         <Reveal>
-          <p className="label-xs flex items-center gap-3 text-plum">
-            <span className="h-px w-8 bg-gold" />
+          <p className="label-xs flex items-center gap-2 text-plum sm:gap-3">
+            <span className="h-px w-6 bg-gold sm:w-8" />
             Certificate Register
           </p>
-          <h2 className="mt-6 text-4xl text-ink md:text-5xl">
+          <h2 className="mt-4 text-3xl text-ink sm:mt-6 sm:text-4xl md:text-5xl">
             Check a certificate
             <br />
             <span className="italic text-plum">is genuine.</span>
           </h2>
-          <p className="mt-6 max-w-md text-ink/70">
+          <p className="mt-4 max-w-md text-sm text-ink/70 sm:mt-6">
             Every training certificate issued by our studio carries a unique number. Enter that
             number together with the name printed on the certificate and we will confirm whether the
             record exists in our register.
           </p>
-          <p className="mt-6 max-w-md text-sm text-muted-foreground">
+          <p className="mt-4 max-w-md text-xs text-muted-foreground sm:mt-6 sm:text-sm">
             Capitalisation, extra spaces and dashes do not matter. If the details do not match, check
             the number against the printed certificate before contacting the studio.
           </p>
         </Reveal>
 
         <Reveal delay={120}>
-          <form onSubmit={onSubmit} noValidate className="border border-border bg-background p-6 md:p-10">
-            <div className="grid gap-6 sm:grid-cols-2">
+          <form onSubmit={onSubmit} noValidate className="border border-border bg-background p-4 sm:p-6 md:p-10">
+            <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
               <div>
-                <label htmlFor="cert-number" className="label-xs text-ink/70">
+                <label htmlFor="cert-number" className="label-xs text-xs text-ink/70 sm:text-sm">
                   Certificate number
                 </label>
                 <input
@@ -86,16 +86,16 @@ export function CertificateCheck() {
                   maxLength={40}
                   aria-invalid={Boolean(errors.number)}
                   aria-describedby={errors.number ? "cert-number-error" : undefined}
-                  className="mt-3 w-full border-b border-border bg-transparent pb-3 text-lg text-ink outline-none transition-colors placeholder:text-ink/25 focus:border-plum"
+                  className="mt-2 sm:mt-3 w-full border-b border-border bg-transparent pb-2 sm:pb-3 text-base sm:text-lg text-ink outline-none transition-colors placeholder:text-ink/25 focus:border-plum"
                 />
                 {errors.number && (
-                  <p id="cert-number-error" className="mt-2 text-sm text-destructive">
+                  <p id="cert-number-error" className="mt-1 sm:mt-2 text-xs sm:text-sm text-destructive">
                     {errors.number}
                   </p>
                 )}
               </div>
               <div>
-                <label htmlFor="cert-name" className="label-xs text-ink/70">
+                <label htmlFor="cert-name" className="label-xs text-xs text-ink/70 sm:text-sm">
                   Name on certificate
                 </label>
                 <input
@@ -107,10 +107,10 @@ export function CertificateCheck() {
                   maxLength={80}
                   aria-invalid={Boolean(errors.name)}
                   aria-describedby={errors.name ? "cert-name-error" : undefined}
-                  className="mt-3 w-full border-b border-border bg-transparent pb-3 text-lg text-ink outline-none transition-colors placeholder:text-ink/25 focus:border-plum"
+                  className="mt-2 sm:mt-3 w-full border-b border-border bg-transparent pb-2 sm:pb-3 text-base sm:text-lg text-ink outline-none transition-colors placeholder:text-ink/25 focus:border-plum"
                 />
                 {errors.name && (
-                  <p id="cert-name-error" className="mt-2 text-sm text-destructive">
+                  <p id="cert-name-error" className="mt-1 sm:mt-2 text-xs sm:text-sm text-destructive">
                     {errors.name}
                   </p>
                 )}
@@ -120,7 +120,7 @@ export function CertificateCheck() {
             <button
               type="submit"
               disabled={checking}
-              className="label-xs mt-8 inline-flex items-center gap-3 border border-plum bg-plum px-8 py-4 text-primary-foreground transition-colors duration-300 hover:bg-ink disabled:cursor-not-allowed disabled:opacity-60"
+              className="label-xs mt-6 sm:mt-8 inline-flex items-center gap-2 sm:gap-3 border border-plum bg-plum px-4 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm text-primary-foreground transition-colors duration-300 hover:bg-ink disabled:cursor-not-allowed disabled:opacity-60"
             >
               {checking ? (
                 <Loader2 className="size-3.5 animate-spin" strokeWidth={1.5} />

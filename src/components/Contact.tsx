@@ -36,21 +36,21 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="border-t border-border py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-10">
+    <section id="contact" className="border-t border-border py-16 sm:py-24 md:py-32">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-5 md:px-10">
         <Reveal>
-          <p className="label-xs flex items-center gap-3 text-plum">
-            <span className="h-px w-8 bg-gold" />
+          <p className="label-xs flex items-center gap-2 text-plum sm:gap-3">
+            <span className="h-px w-6 bg-gold sm:w-8" />
             Visit the studio
           </p>
-          <h2 className="mt-6 max-w-xl text-4xl text-ink md:text-5xl">
+          <h2 className="mt-4 max-w-xl text-3xl text-ink sm:mt-6 sm:text-4xl md:text-5xl">
             Come and see the <span className="italic text-plum">work.</span>
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-14 lg:grid-cols-12 lg:gap-20">
+        <div className="mt-12 grid gap-10 sm:gap-14 lg:mt-16 lg:gap-20 lg:grid-cols-12">
           <Reveal className="lg:col-span-6">
-            <dl className="grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
+            <dl className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-1">
               <div>
                 <dt className="label-xs text-ink/50">Address</dt>
                 <dd className="mt-3 text-ink/80">
@@ -101,12 +101,12 @@ export function Contact() {
               </div>
             </dl>
 
-            <div className="mt-10 border border-border">
+            <div className="mt-8 sm:mt-10 border border-border">
               <iframe
                 title={`Map showing ${site.name}`}
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3415.3818777482693!2d76.11336277482607!3d31.12690777439647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391abdc6bda26a9d%3A0x77eb097cb9b2201e!2sBake%20House!5e0!3m2!1sen!2sin!4v1790065519764!5m2!1sen!2sin"
                 width="100%"
-                height="300"
+                height="250"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
@@ -117,9 +117,9 @@ export function Contact() {
           </Reveal>
 
           <Reveal className="lg:col-span-6">
-            <div className="border border-border bg-background p-6 md:p-8">
-              <h3 className="text-2xl text-ink md:text-2xl">Send us a message</h3>
-              <p className="mt-2 text-sm text-muted-foreground">Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            <div className="border border-border bg-background p-4 sm:p-6 md:p-8">
+              <h3 className="text-xl sm:text-2xl text-ink">Send us a message</h3>
+              <p className="mt-2 text-xs sm:text-sm text-muted-foreground">Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
 
               <form onSubmit={handleSubmit} className="mt-6 space-y-5">
                 <div>

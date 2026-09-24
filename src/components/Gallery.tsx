@@ -118,26 +118,26 @@ export function Gallery() {
   }, [lightbox]);
 
   return (
-    <section id="gallery" className="py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-10">
-        <Reveal className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+    <section id="gallery" className="py-16 sm:py-24 md:py-32">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-5 md:px-10">
+        <Reveal className="flex flex-col gap-4 sm:gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="label-xs flex items-center gap-3 text-plum">
-              <span className="h-px w-8 bg-gold" />
+            <p className="label-xs flex items-center gap-2 text-plum sm:gap-3">
+              <span className="h-px w-6 bg-gold sm:w-8" />
               Portfolio
             </p>
-            <h2 className="mt-6 text-5xl text-ink md:text-6xl">
+            <h2 className="mt-4 text-3xl text-ink sm:mt-6 sm:text-5xl md:text-6xl">
               The <span className="italic text-plum">Art</span>
             </h2>
           </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6 sm:gap-y-3">
             {categories.map((c) => (
               <button
                 key={c}
                 type="button"
                 onClick={() => setActive(c)}
                 className={cn(
-                  "label-xs pb-1 transition-colors duration-300",
+                  "label-xs pb-1 text-xs transition-colors duration-300 sm:text-sm",
                   active === c
                     ? "border-b border-gold text-plum"
                     : "border-b border-transparent text-ink/50 hover:text-ink",
@@ -149,7 +149,7 @@ export function Gallery() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-4 grid-cols-1 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 sm:gap-4 md:mt-14 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
           {visible.map((work, i) => (
             <Reveal key={work.title} delay={(i % 4) * 80} className="overflow-hidden block">
               <button
@@ -168,9 +168,9 @@ export function Gallery() {
                   className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
                 <span className="absolute inset-0 bg-plum/0 transition-colors duration-500 group-hover:bg-plum/25" />
-                <span className="absolute inset-x-0 bottom-0 translate-y-3 p-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                  <span className="label-xs block text-white/80">{work.category}</span>
-                  <span className="mt-1 block font-display text-lg text-white">{work.title}</span>
+                <span className="absolute inset-x-0 bottom-0 translate-y-2 p-3 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 sm:translate-y-3 sm:p-4">
+                  <span className="label-xs block text-xs text-white/80 sm:text-sm">{work.category}</span>
+                  <span className="mt-1 block font-display text-base text-white sm:text-lg">{work.title}</span>
                 </span>
               </button>
             </Reveal>

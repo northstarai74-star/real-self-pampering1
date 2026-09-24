@@ -39,25 +39,25 @@ export function SiteNav() {
           : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-5 md:h-20 md:px-10">
+      <div className="mx-auto flex h-14 max-w-[1400px] items-center justify-between px-4 sm:px-5 sm:h-16 md:h-20 md:px-10">
         <a
           href="#top"
           className={cn(
-            "flex items-baseline gap-2 transition-colors",
+            "flex flex-col items-baseline gap-0 transition-colors sm:gap-1 sm:flex-row sm:gap-2",
             solid ? "text-plum" : "text-ink",
           )}
         >
-          <span className="font-display text-lg tracking-tight md:text-xl">{site.name}</span>
-          <span className="label-xs hidden text-gold sm:inline">{site.tagline}</span>
+          <span className="font-display text-base tracking-tight sm:text-lg md:text-xl">{site.name}</span>
+          <span className="label-xs hidden text-gold text-xs sm:inline">{site.tagline}</span>
         </a>
 
-        <nav className="hidden items-center gap-9 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-6 lg:gap-9 lg:flex" aria-label="Main">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               className={cn(
-                "label-xs transition-colors hover:text-plum",
+                "label-xs text-xs transition-colors hover:text-plum sm:text-sm",
                 solid ? "text-ink/75" : "text-ink/80",
               )}
             >
@@ -66,18 +66,18 @@ export function SiteNav() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="/admin"
-            className="label-xs hidden border border-gold bg-gold px-3 py-2 text-ink transition-colors duration-300 hover:bg-plum hover:text-primary-foreground sm:inline-block sm:px-4 sm:py-3 md:px-6"
+            className="label-xs hidden border border-gold bg-gold px-2 py-1.5 text-ink text-xs transition-colors duration-300 hover:bg-plum hover:text-primary-foreground sm:inline-block sm:px-3 sm:py-2 md:px-4 md:py-3 md:px-6"
           >
             Admin
           </a>
           <a
             href="#verify"
-            className="label-xs border border-plum bg-plum px-4 py-3 text-primary-foreground transition-colors duration-300 hover:bg-ink md:px-6"
+            className="label-xs border border-plum bg-plum px-3 py-2 text-xs text-primary-foreground transition-colors duration-300 hover:bg-ink sm:px-4 sm:py-2 md:px-6 md:py-3"
           >
-            Verify Certificate
+            Verify
           </a>
           <button
             type="button"
@@ -92,17 +92,17 @@ export function SiteNav() {
 
       {open && (
         <div className="fixed inset-0 z-50 bg-background lg:hidden">
-          <div className="flex h-16 items-center justify-between px-5 md:px-10">
-            <span className="font-display text-lg text-plum">{site.name}</span>
+          <div className="flex h-14 sm:h-16 items-center justify-between px-4 sm:px-5 md:px-10">
+            <span className="font-display text-base sm:text-lg text-plum">{site.name}</span>
             <button type="button" onClick={() => setOpen(false)} aria-label="Close menu" className="p-2">
               <X className="size-5" strokeWidth={1.25} />
             </button>
           </div>
-          <nav className="flex flex-col px-5 pt-2 md:px-10" aria-label="Mobile">
+          <nav className="flex flex-col px-4 pt-2 sm:px-5 md:px-10" aria-label="Mobile">
             <a
               href="/admin"
               onClick={() => setOpen(false)}
-              className="border-b-2 border-gold bg-gold px-4 py-4 font-display text-xl text-ink font-bold hover:bg-plum hover:text-primary-foreground transition-colors"
+              className="border-b-2 border-gold bg-gold px-3 py-3 font-display text-lg sm:text-xl text-ink font-bold hover:bg-plum hover:text-primary-foreground transition-colors"
             >
               Admin Panel
             </a>
@@ -111,7 +111,7 @@ export function SiteNav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-border py-5 font-display text-3xl text-plum"
+                className="border-b border-border py-4 sm:py-5 font-display text-2xl sm:text-3xl text-plum"
               >
                 {l.label}
               </a>
