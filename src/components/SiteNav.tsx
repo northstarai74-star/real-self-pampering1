@@ -68,6 +68,12 @@ export function SiteNav() {
 
         <div className="flex items-center gap-3">
           <a
+            href="/admin"
+            className="label-xs hidden border border-gold bg-gold px-3 py-2 text-ink transition-colors duration-300 hover:bg-plum hover:text-primary-foreground sm:inline-block sm:px-4 sm:py-3 md:px-6"
+          >
+            Admin
+          </a>
+          <a
             href="#verify"
             className="label-xs border border-plum bg-plum px-4 py-3 text-primary-foreground transition-colors duration-300 hover:bg-ink md:px-6"
           >
@@ -92,7 +98,14 @@ export function SiteNav() {
               <X className="size-5" strokeWidth={1.25} />
             </button>
           </div>
-          <nav className="flex flex-col px-5 pt-6 md:px-10" aria-label="Mobile">
+          <nav className="flex flex-col px-5 pt-2 md:px-10" aria-label="Mobile">
+            <a
+              href="/admin"
+              onClick={() => setOpen(false)}
+              className="border-b-2 border-gold bg-gold px-4 py-4 font-display text-xl text-ink font-bold hover:bg-plum hover:text-primary-foreground transition-colors"
+            >
+              Admin Panel
+            </a>
             {links.map((l) => (
               <a
                 key={l.href}

@@ -176,7 +176,6 @@ export function AdminCertificates({
                     <TableHead>Course</TableHead>
                     <TableHead>Level</TableHead>
                     <TableHead>Issued</TableHead>
-                    <TableHead>Expires</TableHead>
                     <TableHead className="text-right">Actions</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -194,7 +193,6 @@ export function AdminCertificates({
                       </TableCell>
                       <TableCell>{c.level}</TableCell>
                       <TableCell className="whitespace-nowrap">{c.issued}</TableCell>
-                      <TableCell className="whitespace-nowrap">{c.expires}</TableCell>
                       <TableCell className="text-right">
                         <div className="flex justify-end gap-1">
                           <Button
@@ -271,7 +269,6 @@ export function AdminCertificates({
                   <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
                     <span>Level: {c.level}</span>
                     <span>Issued: {c.issued}</span>
-                    <span>Expires: {c.expires}</span>
                   </div>
                 </li>
               ))}
