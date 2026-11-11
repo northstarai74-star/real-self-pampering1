@@ -2,14 +2,13 @@ export const site = {
   name: "Self Pampering",
   tagline: "Nail Atelier",
   handle: "@selfpampering",
-  city: "Lisbon",
+  city: "Nawanshahr",
   address: ["Arya Samaj road near bake house"],
   phone: "8360082118",
-  email: "Rashmivij1996@gamil.com",
+  email: "Rashmivij1996@gmail.com",
   hours: [
-    { days: "Tuesday — Friday", time: "10:00 — 19:00" },
-    { days: "Saturday", time: "10:00 — 17:00" },
-    { days: "Sunday — Monday", time: "Closed" },
+    { days: "Monday — Saturday", time: "9:00 — 19:00" },
+    { days: "Sunday", time: "Closed" },
   ],
   socials: [
     { label: "Instagram", href: "https://instagram.com/selfpampering2022" },
